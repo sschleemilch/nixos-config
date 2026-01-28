@@ -53,8 +53,23 @@
     };
   };
 
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    preferences = {
+      # disable libadwaita theming for Firefox
+      "widget.gtk.libadwaita-colors.enabled" = false;
+    };
+  };
+
   programs.fish.enable = true;
+
+  nixpkgs.overlays = [
+    (import (
+      builtins.fetchTarball {
+        url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+      }
+    ))
+  ];
 
   environment.systemPackages = with pkgs; [
     vim
@@ -71,6 +86,10 @@
     ghostty
     openssh
     starship
+    neovim
+    ripgrep
+    fd
+    rustup
   ];
   system.stateVersion = "25.11";
 }
