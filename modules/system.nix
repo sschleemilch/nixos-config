@@ -1,9 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-
-{
+{pkgs, ...}: {
   boot = {
     loader = {
       systemd-boot = {
@@ -49,19 +44,20 @@
     defaultUserShell = pkgs.fish;
     users.basti = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = ["wheel"];
     };
   };
 
-  programs.firefox = {
-    enable = true;
-    preferences = {
-      # disable libadwaita theming for Firefox
-      "widget.gtk.libadwaita-colors.enabled" = false;
+  programs = {
+    firefox = {
+      enable = true;
+      preferences = {
+        # disable libadwaita theming for Firefox
+        "widget.gtk.libadwaita-colors.enabled" = false;
+      };
     };
+    fish.enable = true;
   };
-
-  programs.fish.enable = true;
 
   nixpkgs.overlays = [
     (import (
