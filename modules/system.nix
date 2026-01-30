@@ -86,6 +86,10 @@
     ripgrep
     fd
     rustup
+    go
+    nodejs_25
+    tree-sitter
+    gcc
   ];
   system.stateVersion = "25.11";
 }
