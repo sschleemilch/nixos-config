@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   boot = {
     loader = {
       systemd-boot = {
@@ -44,7 +45,7 @@
     defaultUserShell = pkgs.fish;
     users.basti = {
       isNormalUser = true;
-      extraGroups = ["wheel"];
+      extraGroups = [ "wheel" ];
     };
   };
 
@@ -82,14 +83,35 @@
     ghostty
     openssh
     starship
-    neovim
     ripgrep
     fd
     rustup
     go
     nodejs_25
+    python314
+    uv
+    neovim
     tree-sitter
     gcc
+    stylua
+    shfmt
+    ty
+    ruff
+    lua-language-server
+    dockerfile-language-server
+    gopls
+    typescript-language-server
+    astro-language-server
+    vscode-json-languageserver
+    prettier
+    yaml-language-server
+    ltex-ls-plus
+    gotools
+    gofumpt
+    buf
+    marksman
+    rust-analyzer
+    nixfmt
   ];
   system.stateVersion = "25.11";
 }
