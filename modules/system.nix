@@ -29,16 +29,20 @@
       pulse.enable = true;
     };
 
-    displayManager = {
-      cosmic-greeter.enable = true;
-      autoLogin = {
-        enable = true;
-        user = "basti";
-      };
-    };
     desktopManager.cosmic.enable = true;
 
     system76-scheduler.enable = true;
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "start-cosmic";
+        user = "basti";
+      };
+      default_session = initial_session;
+    };
   };
 
   users = {
