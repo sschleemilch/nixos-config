@@ -12,4 +12,5 @@
   networking.hostName = "ladon";
 
   services.fprintd.enable = true;
+  hardware.bluetooth.enable = true;
 }

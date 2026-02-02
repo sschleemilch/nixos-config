@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+
+  imports = [
+    ./hyprland.nix
+  ];
+
   boot = {
     loader = {
       systemd-boot = {
@@ -26,22 +31,7 @@
 
     pipewire = {
       enable = true;
-      pulse.enable = true;
-    };
-
-    desktopManager.cosmic.enable = true;
-
-    system76-scheduler.enable = true;
-  };
-
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "start-cosmic";
-        user = "basti";
-      };
-      default_session = initial_session;
+      wireplumber.enable = true;
     };
   };
 
@@ -54,13 +44,7 @@
   };
 
   programs = {
-    firefox = {
-      enable = true;
-      preferences = {
-        # disable libadwaita theming for Firefox
-        "widget.gtk.libadwaita-colors.enabled" = false;
-      };
-    };
+    firefox.enable = true;
     fish.enable = true;
   };
 
@@ -117,5 +101,11 @@
     rust-analyzer
     nixfmt
   ];
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    nerd-fonts.fira-code
+  ];
+
   system.stateVersion = "25.11";
 }
