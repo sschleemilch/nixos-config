@@ -30,8 +30,9 @@
     };
 
     desktopManager.cosmic.enable = true;
-
     system76-scheduler.enable = true;
+
+    upower.enable = true;
   };
 
   services.greetd = {
@@ -54,13 +55,7 @@
   };
 
   programs = {
-    firefox = {
-      enable = true;
-      preferences = {
-        # disable libadwaita theming for Firefox
-        "widget.gtk.libadwaita-colors.enabled" = false;
-      };
-    };
+    firefox.enable = true;
     fish.enable = true;
   };
 
