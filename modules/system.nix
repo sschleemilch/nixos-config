@@ -100,6 +100,7 @@
     marksman
     rust-analyzer
     nixfmt
+    wl-clipboard
   ];
 
   fonts.packages = with pkgs; [

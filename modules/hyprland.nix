@@ -22,7 +22,6 @@
     dunst
     nwg-look
     nautilus
-    wl-clipboard
     fuzzel
   ];
 
