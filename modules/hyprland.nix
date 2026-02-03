@@ -15,7 +15,7 @@
 
   environment.systemPackages = with pkgs; [
     swaybg
-    # hyprshutdown
+    hyprshutdown
     hyprpolkitagent
     waybar
     hyprlock
