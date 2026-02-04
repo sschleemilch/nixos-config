@@ -99,7 +99,7 @@
     wl-clipboard
   ];
 
-  fonts.packages = with pkgs; [ noto-fonts nerd-fonts.commit-mono ];
+  fonts.packages = with pkgs; [ noto-fonts nerd-fonts.commit-mono orbitron ];
 
   system.stateVersion = "25.11";
 }
