@@ -19,6 +19,6 @@
     nwg-look
     nautilus
     fuzzel
+    hyprlock
   ];
-
 }
