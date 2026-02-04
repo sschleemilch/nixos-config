@@ -11,6 +11,11 @@
 
   networking.hostName = "ladon";
 
-  services.fprintd.enable = true;
+  services = {
+    fprintd.enable = true;
+    tuned.enable = true;
+    upower.enable = true;
+  };
+
   hardware.bluetooth.enable = true;
 }

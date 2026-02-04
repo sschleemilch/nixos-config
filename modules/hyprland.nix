@@ -23,6 +23,6 @@
     nwg-look
     nautilus
     fuzzel
+    noctalia-shell
   ];
-
 }

@@ -106,6 +106,7 @@
   fonts.packages = with pkgs; [
     noto-fonts
     nerd-fonts.fira-code
+    nerd-fonts.commit-mono
   ];
 
   system.stateVersion = "25.11";
