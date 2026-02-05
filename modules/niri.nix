@@ -10,6 +10,11 @@
       };
       default_session = initial_session;
     };
+    gnome.dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "'prefer-dark'";
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
