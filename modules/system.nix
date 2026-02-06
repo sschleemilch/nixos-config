@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
 
-  imports = [ ./hyprland.nix ];
+  imports = [ ./niri.nix ];
 
   boot = {
     loader = {
@@ -99,6 +99,8 @@
     rust-analyzer
     nixfmt
     wl-clipboard
+    papirus-icon-theme
+    bibata-cursors
   ];
 
   fonts.packages = with pkgs; [
@@ -106,35 +108,6 @@
     nerd-fonts.commit-mono
     orbitron
   ];
-
-  xdg.desktopEntries = {
-    poweroff = {
-      name = "Power Off";
-      comment = "Shut down the system";
-      exec = "systemctl poweroff";
-      icon = "system-shutdown";
-      terminal = false;
-      categories = [ "System" ];
-    };
-
-    reboot = {
-      name = "Reboot";
-      comment = "Reboot the system";
-      exec = "systemctl reboot";
-      icon = "system-reboot";
-      terminal = false;
-      categories = [ "System" ];
-    };
-
-    lock = {
-      name = "Lock Screen";
-      comment = "Lock the screen using hyprlock";
-      exec = "${pkgs.hyprlock}/bin/hyprlock";
-      icon = "system-lock-screen";
-      terminal = false;
-      categories = [ "System" ];
-    };
-  };
 
   system.stateVersion = "25.11";
 }
