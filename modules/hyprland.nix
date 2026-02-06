@@ -23,7 +23,7 @@
     hyprpolkitagent
     waybar
     hyprlock
-    dunst
+    mako
     nwg-look
     nautilus
     fuzzel

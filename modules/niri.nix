@@ -20,7 +20,7 @@
   environment.systemPackages = with pkgs; [
     swaybg
     waybar
-    dunst
+    mako
     nwg-look
     nautilus
     fuzzel
