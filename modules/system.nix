@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   imports = [ ./hyprland.nix ];
 
@@ -46,10 +47,11 @@
   };
 
   nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url =
-        "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-    }))
+    (import (
+      builtins.fetchTarball {
+        url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+      }
+    ))
   ];
 
   environment.systemPackages = with pkgs; [
@@ -99,7 +101,40 @@
     wl-clipboard
   ];
 
-  fonts.packages = with pkgs; [ noto-fonts nerd-fonts.commit-mono orbitron ];
+  fonts.packages = with pkgs; [
+    noto-fonts
+    nerd-fonts.commit-mono
+    orbitron
+  ];
+
+  xdg.desktopEntries = {
+    poweroff = {
+      name = "Power Off";
+      comment = "Shut down the system";
+      exec = "systemctl poweroff";
+      icon = "system-shutdown";
+      terminal = false;
+      categories = [ "System" ];
+    };
+
+    reboot = {
+      name = "Reboot";
+      comment = "Reboot the system";
+      exec = "systemctl reboot";
+      icon = "system-reboot";
+      terminal = false;
+      categories = [ "System" ];
+    };
+
+    lock = {
+      name = "Lock Screen";
+      comment = "Lock the screen using hyprlock";
+      exec = "${pkgs.hyprlock}/bin/hyprlock";
+      icon = "system-lock-screen";
+      terminal = false;
+      categories = [ "System" ];
+    };
+  };
 
   system.stateVersion = "25.11";
 }
