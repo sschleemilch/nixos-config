@@ -101,6 +101,7 @@
     wl-clipboard
     papirus-icon-theme
     bibata-cursors
+    libnotify
   ];
 
   fonts.packages = with pkgs; [
