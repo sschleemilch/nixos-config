@@ -102,6 +102,7 @@
     papirus-icon-theme
     bibata-cursors
     libnotify
+    opencode
   ];
 
   fonts.packages = with pkgs; [

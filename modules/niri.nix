@@ -11,6 +11,7 @@
       };
       default_session = initial_session;
     };
+    upower.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -21,5 +22,7 @@
     nautilus
     fuzzel
     hyprlock
+    quickshell
+    dgop
   ];
 }
