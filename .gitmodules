@@ -1,0 +1,3 @@
+[submodule "modules/fonts"]
+	path = modules/fonts
+	url = git@github.com:sschleemilch/monolisa

@@ -2,27 +2,30 @@
 {
   programs.niri.enable = true;
 
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "niri-session";
-        user = "basti";
-      };
-      default_session = initial_session;
-    };
+  services = {
     upower.enable = true;
+    greetd = {
+      enable = true;
+      settings = rec {
+        initial_session = {
+          command = "niri-session";
+          user = "basti";
+        };
+        default_session = initial_session;
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
     swaybg
-    waybar
     mako
     nwg-look
     nautilus
-    fuzzel
     hyprlock
     quickshell
     dgop
+    fuzzel
+    brightnessctl
+    cliphist
   ];
 }

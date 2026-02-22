@@ -107,8 +107,16 @@
 
   fonts.packages = with pkgs; [
     noto-fonts
-    nerd-fonts.commit-mono
     orbitron
+    material-symbols
+    (pkgs.stdenv.mkDerivation {
+      name = "monolisa";
+      src = ./fonts/ttf;
+      installPhase = ''
+        mkdir -p $out/share/fonts/truetype
+        cp *.ttf $out/share/fonts/truetype/
+      '';
+    })
   ];
 
   system.stateVersion = "25.11";
