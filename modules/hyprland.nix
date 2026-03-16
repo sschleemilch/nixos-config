@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  programs.niri.enable = true;
+  programs.hyprland.enable = true;
 
   services = {
     upower.enable = true;
@@ -8,7 +8,7 @@
       enable = true;
       settings = rec {
         initial_session = {
-          command = "niri-session";
+          command = "start-hyprland";
           user = "basti";
         };
         default_session = initial_session;
@@ -17,15 +17,16 @@
   };
 
   environment.systemPackages = with pkgs; [
-    swaybg
-    mako
-    nwg-look
-    nautilus
-    hyprlock
-    quickshell
-    dgop
-    fuzzel
     brightnessctl
     cliphist
+    dgop
+    hyprlock
+    hyprpaper
+    hyprpolkitagent
+    mako
+    nautilus
+    nwg-look
+    quickshell
+    fuzzel
   ];
 }

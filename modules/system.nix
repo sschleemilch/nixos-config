@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
 
-  imports = [ ./niri.nix ];
+  imports = [ ./hyprland.nix ];
 
   boot = {
     loader = {
