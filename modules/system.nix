@@ -68,12 +68,11 @@
     zoxide
     ghostty
     openssh
-    starship
     ripgrep
     fd
     rustup
     go
-    nodejs_25
+    nodejs
     python314
     uv
     neovim
@@ -89,6 +88,7 @@
     typescript-language-server
     astro-language-server
     vscode-json-languageserver
+    nil
     prettier
     yaml-language-server
     ltex-ls-plus
@@ -99,8 +99,6 @@
     rust-analyzer
     nixfmt
     wl-clipboard
-    papirus-icon-theme
-    bibata-cursors
     libnotify
     opencode
   ];
