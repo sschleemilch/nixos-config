@@ -18,15 +18,11 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
-    cliphist
-    dgop
     hyprlock
     hyprpaper
     hyprpolkitagent
     mako
     nautilus
-    nwg-look
     quickshell
-    fuzzel
   ];
 }
